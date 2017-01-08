@@ -5,11 +5,96 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- App CSS -->
+    <link rel="stylesheet" href="stylesheets/style.css" type="text/css">
     <link rel="stylesheet" href="stylesheets/font-awesome-4.7.0/css/font-awesome.min.css">
+
+<!-- External CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
-  </head>
-  <body>
+<!-- App JS -->
+  <script type="text/javascript" src="/javascripts/moreNumbersButton.js"></script>
 
-  HELLOOOOO
-  </body>
+<!-- External JS -->
+  <script type="text/javascript" src="/vendor/jquery-2.2.3.min.js"></script>
+  </head>
+
+  <body>
+    <div class="jumbotron">
+      <div class="row">
+        <div class="col-xs-12  col-sm-offset-2 col-sm-10"
+          <div class="page-header">
+            <h1>Address Book
+              <br>
+              <h3> Add someone new: </h3>
+            </h1>
+              <br>
+            <p><a class="btn btn-default btn-danger" href="/contacts" role="button">
+              <i class ="fa fa-times fa-lg" aria-hidden="true"></i> &nbsp;
+              Cancel
+            </a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-sm-offset-3 col-sm-6"
+          <form class="form" action="/contacts" method="post">
+            <div class="form-group">
+
+              <label for="title"><h2>First Name</h2></label>
+              <input type="text" class="form-control" id="first_name" placeholder="First name" name="first_name">
+
+              <label for="title"><h2>Last Name</h2></label>
+              <input type="text" class="form-control" id="last_name" placeholder="Last name" name="last_name">
+
+              <label for="title"><h2>Email</h2></label>
+              <input type="text" class="form-control" id="email" placeholder="Email" name="email">
+
+              <label for="title"><h2>Main Phone Number</h2></label>
+              <input type="text" class="form-control" id="main" placeholder="Main Phone Number" name="main">
+              <!-- <br>
+              <button type="button" class="btn btn-default"><i class="fa fa-plus"><i>Add More Numbers</button> -->
+              <!-- <br> -->
+              <br>
+              <section class="add-more-numbers">
+                <div class="form-group">
+                  <label for="title">Secondary Phone Number</label>
+                  <input type="text" class="form-control" id="secondary" placeholder="Secondary Phone Number" name="secondary">
+                  <br>
+                  <label for="title">Tertiary Phone Number</label>
+                  <input type="text" class="form-control" id="main" placeholder="Tertiary Phone Number" name="tertiary">
+                  <br>
+                  <label for="title">Other Phone Number</label>
+                  <input type="text" class="form-control" id="other" placeholder="other Phone Number" name="other">
+                </div>
+              </section>
+
+                <div class="form-group">
+                  <h2>Address</h2>
+                  <label for="title">Unit Number</label>
+                  <input type="text" class="form-control" id="unit_number" placeholder="Unit Number" name="unit_number">
+                  <br>
+                  <label for="title">Street Number</label>
+                  <input type="text" class="form-control" id="street_number" placeholder="Street Number" name="street_number">
+                  <br>
+                  <label for="title">Street Name</label>
+                  <input type="text" class="form-control" id="street_name" placeholder="Street Name" name="street_name">
+                  <br>
+                  <label for="title">City</label>
+                  <input type="text" class="form-control" id="city" placeholder="City" name="city">
+                  <br>
+                  <label for="title">Province</label>
+                  <input type="text" class="form-control" id="province" placeholder="Province" name="province">
+                  <br>
+                  <label for="title">Postal Code</label>
+                  <input type="text" class="form-control" id="postal_code" placeholder="Postal Code" name="postal_code">
+                </div>
+                <br>
+              <button type="submit" class="btn btn-default btn-success"> Create
+              </button>
+          </form>
+        </div>
+      </div>
+    </div>

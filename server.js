@@ -96,16 +96,23 @@ const seedTestContact = [
 ];
 
 app.get('/contacts', (req, res) => {
-  return res.render('home', { contact: seedTestContact} )
+  return res.render('home', { contacts: seedTestContact} )
 });
 
 app.get('/contacts/new', (req, res) => {
-  return res.render('add_contact', { })
+  return res.render('add_contact', { contact: seedTestContact })
 });
 
 app.post('/contacts/new', (req, res) => {
-  return res.redirect('/')
+  return res.redirect('/contacts')
 });
+
+app.get('/contacts/:contactId', (req, res) => {
+  return res.render('view_contactId.ejs', {contactById: seedTestContact})
+})
+
+
+
 
 
 
@@ -128,8 +135,3 @@ app.listen(PORT, () => {
 // get shit from db
 
 // put in obj
-
-// app.get('/contacts/:contactId', (req, res) => {
-//   res.render('')
-// })
-//
