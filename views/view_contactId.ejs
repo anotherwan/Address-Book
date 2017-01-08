@@ -13,9 +13,10 @@
       <div class="row">
         <div class="col-xs-12  col-sm-offset-2 col-sm-10">
           <div class="page-header">
-            <h3>Contact Name </h3>
+            <% contactById %>
+            <h3> <%= contactById.first_name %> <%= contactById.last_name %> </h3>
             <br>
-            <p><a class="btn btn-default btn-sm" href="#" role="button">
+            <p><a class="btn btn-default btn-sm" href="/contacts/:contactId/edit" role="button">
               <i class ="fa fa-pencil-o fa-lg" aria-hidden="true"></i> &nbsp;
               Edit
             </a> &nbsp;
@@ -31,18 +32,18 @@
         <div class="row">
           <div class="col-xs-12 col-sm-offset-2 col-sm-8">
               <div class="list-group-item-text">
-                <h3>
-                <i class="fa fa-envelope-o fa-fw" aria-hidden="true"></i>
-                  Email:
-                </h3>
-                <h3>
-                <i class ="fa fa-phone fa-fw" aria-hidden="true"></i>
-                Main:
-                </h3>
-                <h3>
-                <i class ="fa fa-map-marker fa-fw" aria-hidden="true"></i>
-                Address:
-                </h3>
+                <h3><i class="fa fa-envelope-o fa-fw" aria-hidden="true"></i> Email:</h3>
+                  <h5> <%= contactById.email %> </h5>
+                <h3><i class ="fa fa-phone fa-fw" aria-hidden="true"></i> Main:</h3>
+                  <h5><%= contactById.main %></h5>
+                <h3>Secondary:</h3>
+                <h5><%= contactById.secondary %></h5>
+                <h3>Tertiary:</h3>
+                <h5><%= contactById.tertiary %></h5>
+                <h3>Other:</h3>
+                <h5><%= contactById.other %></h5>
+                <h3><i class ="fa fa-map-marker fa-fw" aria-hidden="true"></i> Address:</h3>
+                  <h5><%= contactById.unit_number %>, <%= contactById.street_number %> <%= contactById.street_name %>, <%= contactById.city %>, <%= contactById.province %>, <%= contactById.postal_code %>
               </div>
           </div>
         </div>

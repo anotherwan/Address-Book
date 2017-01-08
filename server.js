@@ -108,11 +108,16 @@ app.post('/contacts/new', (req, res) => {
 });
 
 app.get('/contacts/:contactId', (req, res) => {
-  return res.render('view_contactId.ejs', {contactById: seedTestContact})
+  return res.render('view_contactId.ejs', {contactById: seedTestContact[0]})
 })
 
+app.get('/contacts/:contactId/edit', (req, res) => {
+  return res.render('edit_contactId.ejs', {contactById: seedTestContact[1]})
+})
 
-
+app.put('contacts/:contactId/edit', (req, res) => {
+  return res.redirect('/contacts')
+})
 
 
 

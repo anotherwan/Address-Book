@@ -24,14 +24,16 @@
       <div class="row">
         <div class="col-xs-12  col-sm-offset-2 col-sm-10"
           <div class="page-header">
-            <h1>Address Book
-              <br>
-              <h3> Add someone new: </h3>
-            </h1>
-              <br>
-            <p><a class="btn btn-sm btn-danger" href="/contacts" role="button">
+            <% contactById %>
+            <h3> <%= contactById.first_name %> <%= contactById.last_name %> </h3>
+            <br>
+            <p><a class="btn btn-default btn-sm" href="/contacts" role="button">
               <i class ="fa fa-times fa-lg" aria-hidden="true"></i> &nbsp;
               Cancel
+            </a> &nbsp;
+            <a class="btn btn-danger btn-sm" href="#" role="button">
+              <i class ="fa fa-trash-o fa-lg" aria-hidden="true"></i> &nbsp;
+              Delete
             </a></p>
           </div>
         </div>
@@ -44,16 +46,16 @@
             <div class="form-group">
 
               <label for="title"><h2>First Name</h2></label>
-              <input type="text" class="form-control" id="first_name" placeholder="First name" name="first_name">
+              <input type="text" class="form-control" id="first_name" placeholder="<%= contactById.first_name %>" name="first_name">
 
               <label for="title"><h2>Last Name</h2></label>
-              <input type="text" class="form-control" id="last_name" placeholder="Last name" name="last_name">
+              <input type="text" class="form-control" id="last_name" placeholder="<%= contactById.last_name %>" name="last_name">
 
               <label for="title"><h2>Email</h2></label>
-              <input type="text" class="form-control" id="email" placeholder="Email" name="email">
+              <input type="text" class="form-control" id="email" placeholder="<%= contactById.email %>" name="email">
 
               <label for="title"><h2>Main Phone Number</h2></label>
-              <input type="text" class="form-control" id="main" placeholder="Main Phone Number" name="main">
+              <input type="text" class="form-control" id="main" placeholder="<%= contactById.main %>" name="main">
               <!-- <br>
               <button type="button" class="btn btn-default"><i class="fa fa-plus"><i>Add More Numbers</button> -->
               <!-- <br> -->
@@ -61,35 +63,35 @@
               <section class="add-more-numbers">
                 <div class="form-group">
                   <label for="title">Secondary Phone Number</label>
-                  <input type="text" class="form-control" id="secondary" placeholder="Secondary Phone Number" name="secondary">
+                  <input type="text" class="form-control" id="secondary" placeholder="<%= contactById.secondary %>" name="secondary">
                   <br>
                   <label for="title">Tertiary Phone Number</label>
-                  <input type="text" class="form-control" id="main" placeholder="Tertiary Phone Number" name="tertiary">
+                  <input type="text" class="form-control" id="main" placeholder="<%= contactById.tertiary %>" name="tertiary">
                   <br>
                   <label for="title">Other Phone Number</label>
-                  <input type="text" class="form-control" id="other" placeholder="other Phone Number" name="other">
+                  <input type="text" class="form-control" id="other" placeholder="<%= contactById.other %>" name="other">
                 </div>
               </section>
 
                 <div class="form-group">
                   <h2>Address</h2>
                   <label for="title">Unit Number</label>
-                  <input type="text" class="form-control" id="unit_number" placeholder="Unit Number" name="unit_number">
+                  <input type="text" class="form-control" id="unit_number" placeholder="<%= contactById.unit_number %>" name="unit_number">
                   <br>
                   <label for="title">Street Number</label>
-                  <input type="text" class="form-control" id="street_number" placeholder="Street Number" name="street_number">
+                  <input type="text" class="form-control" id="street_number" placeholder="<%= contactById.street_number %>" name="street_number">
                   <br>
                   <label for="title">Street Name</label>
-                  <input type="text" class="form-control" id="street_name" placeholder="Street Name" name="street_name">
+                  <input type="text" class="form-control" id="street_name" placeholder="<%= contactById.street_name %>" name="street_name">
                   <br>
                   <label for="title">City</label>
-                  <input type="text" class="form-control" id="city" placeholder="City" name="city">
+                  <input type="text" class="form-control" id="city" placeholder="<%= contactById.city %>" name="city">
                   <br>
                   <label for="title">Province</label>
-                  <input type="text" class="form-control" id="province" placeholder="Province" name="province">
+                  <input type="text" class="form-control" id="province" placeholder="<%= contactById.province %>" name="province">
                   <br>
                   <label for="title">Postal Code</label>
-                  <input type="text" class="form-control" id="postal_code" placeholder="Postal Code" name="postal_code">
+                  <input type="text" class="form-control" id="postal_code" placeholder="<%= contactById.postal_code %>" name="postal_code">
                 </div>
                 <br>
               <button type="submit" class="btn btn-default btn-success"> Create
