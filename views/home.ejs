@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="../font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="stylesheets/font-awesome-4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
   </head>
@@ -19,7 +19,10 @@
               <h4> A fancy name for a basic contact list</h4>
             </h1>
               <br>
-            <p><a class="btn btn-default btn-lg" href="#" role="button">Add Contact</a></p>
+            <p><a class="btn btn-default btn-lg" href="/contacts/new" role="button">
+              <i class ="fa fa-plus fa-lg" aria-hidden="true"></i> &nbsp;
+              Add Contact
+            </a></p>
           </div>
         </div>
       </div>
@@ -27,18 +30,29 @@
     <div class="panel panel-default">
       <div class="panel-heading">
         <h1 class="panel-title">
-          <i class="fa-lg fa-address-book" aria-hidden="true"></i> <strong>Contacts</strong> <span class="badge">#</span></h1>
+          <i class="fa fa-address-book fa-lg" aria-hidden="true"></i>&nbsp; <strong>Contacts</strong> &nbsp; <span class="badge">#</span></h1>
       </div>
-      <div class="panel-body">
         <div class="list-group">
           <% contact.forEach(contactEntry => { %>
               <a href="#" class="list-group-item">
-                <h3 class="list-group-item-heading"><%= contactEntry.first_name %> <%= contactEntry.last_name %></h3>
-                <h5 class="list-group-item-text"><%= contactEntry.email %></h5>
+                <h3 class="list-group-item-heading">
+                  <%= contactEntry.first_name %> <%= contactEntry.last_name %>
+                </h3>
+                <h5 class="list-group-item-text">
+                  <i class="fa fa-envelope-o fa-fw" aria-hidden="true"></i>
+                    <%= contactEntry.email %>
+                </h5>
+                <h5>
+                  <i class ="fa fa-phone fa-fw" aria-hidden="true"></i>
+                  <%= contactEntry.main %>
+                </h5>
+                <h5>
+                  <i class ="fa fa-map-marker fa-fw" aria-hidden="true"></i>
+                    <%= `${contactEntry.unit_number} ${contactEntry.street_number} ${contactEntry.street_name}, ${contactEntry.city}, ${contactEntry.province}, ${contactEntry.postal_code}` %>
+                </h5>
               </a>
           <% }) %>
         </div>
-      </div>
       <div class="panel-footer"></div>
     </div>
   </body>
