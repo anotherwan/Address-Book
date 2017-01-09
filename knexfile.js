@@ -6,6 +6,7 @@ module.exports = {
     client: 'pg',
     ssl: true,
     connection: process.env.DATABASE_URL,
+    useNullAsDefault: true,
     migrations: {
       directory: 'migrations',
       tableName: 'migrations'
